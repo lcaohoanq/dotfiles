@@ -3,6 +3,9 @@ MenuBar=Disabled
 [$Version]
 update_info=dolphin_detailsmodesettings.upd:rename-leading-padding
 
+[ExtractDialog]
+1366x768 screen: Window-Maximized=true
+
 [General]
 ShowSelectionToggle=false
 ShowStatusBar=false
