@@ -1,3 +1,5 @@
-
 [Default Applications]
 inode/directory=org.kde.dolphin.desktop
+
+[Added Associations]
+audio/vnd.wave=vlc.desktop;

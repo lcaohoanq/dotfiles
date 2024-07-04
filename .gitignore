@@ -13,3 +13,15 @@ session/
 azuredatastudio/
 byobu/
 vlc/
+
+JetBrains/
+QtProject.conf
+Thunar/
+X-Cinnamon-xdg-terminals.list
+baloofilerc
+# cinnamon/
+gtk-2.0/
+menus/cinnamon-applications-merged
+nemo/
+xdg-terminals.list
+# xfce4/

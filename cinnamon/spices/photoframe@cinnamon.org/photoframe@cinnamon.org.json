@@ -1,0 +1,68 @@
+{
+    "directory": {
+        "default": " ",
+        "type": "filechooser",
+        "description": "Folder",
+        "allow-none": false,
+        "select-dir": true,
+        "value": "file:///home/lcaohoanq/%20"
+    },
+    "shuffle": {
+        "default": true,
+        "description": "Shuffle",
+        "type": "switch",
+        "value": true
+    },
+    "delay": {
+        "default": 5,
+        "type": "spinbutton",
+        "min": 1,
+        "max": 3600,
+        "description": "Delay",
+        "units": "seconds",
+        "step": 1,
+        "value": 5
+    },
+    "height": {
+        "default": 200,
+        "type": "spinbutton",
+        "min": 50,
+        "max": 1600,
+        "description": "Height",
+        "units": "pixels",
+        "step": 50,
+        "value": 200
+    },
+    "width": {
+        "default": 300,
+        "type": "spinbutton",
+        "min": 50,
+        "max": 1600,
+        "description": "Width",
+        "units": "pixels",
+        "step": 50,
+        "value": 300
+    },
+    "fade-delay": {
+        "default": 0.3,
+        "type": "spinbutton",
+        "min": 0,
+        "max": 10,
+        "description": "Fade delay",
+        "step": 0.1,
+        "units": "seconds",
+        "value": 0.3
+    },
+    "effect": {
+        "type": "combobox",
+        "description": "Special effect",
+        "default": "",
+        "options": {
+            "None": "",
+            "Sepia": "sepia",
+            "Black and White": "black-and-white"
+        },
+        "value": ""
+    },
+    "__md5__": "738cdf363d241ed8dbaafbed122a260f"
+}
