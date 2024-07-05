@@ -1,0 +1,190 @@
+#  ███████╗██╗  ██╗██╗  ██╗██╗  ██╗██████╗ ██████╗  ██████╗
+#  ██╔════╝╚██╗██╔╝██║  ██║██║ ██╔╝██╔══██╗██╔══██╗██╔════╝
+#  ███████╗ ╚███╔╝ ███████║█████╔╝ ██║  ██║██████╔╝██║     
+#  ╚════██║ ██╔██╗ ██╔══██║██╔═██╗ ██║  ██║██╔══██╗██║     
+#  ███████║██╔╝ ██╗██║  ██║██║  ██╗██████╔╝██║  ██║╚██████╗
+#  ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝ ╚═════╝
+#	z0mbi3			https://github.com/gh0stzk/dotfiles
+#
+
+# Show help
+F1
+	OpenApps --KeyHelp
+
+#|||----- Applications -----|||#
+
+# Open Terminal (alacritty)
+super + Return
+	OpenApps --terminal
+
+# Open floating Terminal
+super + alt + Return
+	OpenApps --floating
+
+# Application menu
+super + @space
+	OpenApps --menu
+
+#####
+
+# Apps (browser, editor, filemanager)
+shift + alt + {b,g,n}
+	OpenApps {--browser,--editor,--filemanager}
+
+# Terminal apps (ranger, nvim, ncmpcpp)
+shift + alt + {r,v,k}
+	OpenApps {--ranger,--nvim,--music}
+
+# Pavucontrol
+shift + alt + p
+	OpenApps --soundcontrol
+
+
+#|||----- System Keybindings -----|||#
+
+# Theme Selector
+alt + @space
+	RiceSelector
+
+#Terminal Selector
+super + alt + t
+	Term --selecterm
+
+# jgmenu
+~button3
+  xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --csv-file=~/.config/bspwm/src/jgmenu/menu.txt --config-file=~/.config/bspwm/jgmenurc
+
+# Scratchpad
+super + alt + o
+	tdrop -a -w 70% -h 35% -y 0 -x 15%  --class scratch alacritty --class=scratch
+
+# Power off, Reboot, Log out, Lockscreen, kill an app
+ctrl + super + alt + {p,r,q,l,k}
+	{systemctl poweroff, systemctl reboot,bspc quit,physlock -d,xkill}
+
+# Hide/Show Bar (Polybar and/or eww)
+super + alt + {h,u}
+	HideBar {-h,-u}
+
+# Change transparency on focused window
+ctrl + alt + {plus,minus,t}
+	picom-trans {-c -o +3,-c -o -1,-c -d}
+
+# Random wallpaper
+super + alt + w
+	WallSelect
+
+# Network Manager
+super + alt + n
+	OpenApps --netmanager
+
+# Clipboard
+super + alt + c
+	OpenApps --clipboard
+
+# Screenshot
+super + alt + s
+	OpenApps --screenshot
+
+# Bluetooth
+super + alt + b
+	OpenApps --bluetooth
+
+# PowerMenu
+super + alt + p
+	OpenApps --powermenu
+
+# Manage brightness
+XF86MonBrightness{Up,Down}
+    sh Brightness {up,down}
+
+# Volume control
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+	Volume{ --inc, --dec, --toggle}
+
+# Music Control
+XF86Audio{Next,Prev,Play,Stop}
+	MediaControl {--next,--previous,--toggle,--stop}
+
+
+#|||----- Bspwm hotkeys -----|||#
+
+# Reload BSPWM
+super + alt + r
+	bspc wm -r
+
+# close and kill
+super + {_,shift + }q
+	bspc node -{c,k}
+	
+# Reload Keybindings
+super + Escape
+	pkill -USR1 -x sxhkd; dunstify -u low -i ~/.config/bspwm/assets/reload.svg 'sxhkd' 'The configuration file has been reloaded successfully!'
+
+#####
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+ctrl + alt {m,x,s,p}
+	bspc node -g {marked,locked,sticky,private}
+
+# Hide/Unhide Window
+ctrl + alt + h
+	BspHideNode
+
+#####
+
+# rotate desktop
+super + r
+	bspc node @/ --rotate {90,-90}
+
+# Change focus of the Node or Swap Nodes
+shift + super {_,ctrl + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# Switch workspace
+super + {Left,Right}
+	bspc desktop -f {prev,next}.local
+
+# focus or send to the given desktop
+super + {_,alt + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# Send focused Node to workspace directionally
+super + alt + {Left,Right}
+	bspc node -d {prev,next} '--follow'
+
+# focus the last node/desktop
+super + {comma,Tab}
+	bspc {node,desktop} -f last
+
+#####
+
+# preselect the direction
+super + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# cancel the preselection for the focused node
+super + alt + space
+	bspc node -p cancel
+
+#####
+	
+# expand a window
+ctrl + alt {Left,Down,Up,Right}
+	bspc node -z {left -10 0,bottom 0 10,top 0 -10,right 10 0}
+
+# contract a window
+ctrl + shift + alt + {Left,Down,Up,Right}
+	bspc node -z {right -10 0,top 0 10,bottom 0 -10,left 10 0}
+
+# move a floating window
+alt + shift {Left,Down,Up,Right}
+	bspc node -v {-10 0,0 10,0 -10,10 0}

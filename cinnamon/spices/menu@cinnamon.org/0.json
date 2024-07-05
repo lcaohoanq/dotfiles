@@ -88,7 +88,7 @@
         "tooltip": "Select an icon to show in the panel.",
         "default_icon": "cinnamon-symbolic",
         "dependency": "menu-custom",
-        "value": "/usr/share/icons/luna/Windows XP.ico"
+        "value": "/home/lcaohoanq/Downloads/win95-winxp_icons/icons/w95_40.ico"
     },
     "menu-icon-size": {
         "type": "spinbutton",
