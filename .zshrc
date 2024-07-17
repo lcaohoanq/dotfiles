@@ -117,6 +117,11 @@ alias confighypr='nvim ~/.config/'
 alias f='fzf --preview="bat --color=always {}"'
 alias fn='/usr/bin/nvim $(fzf --preview="bat --color=always {}")'
 
+fc() {
+  local dir
+  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
+}
+
 # Handy change dir shortcuts
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -136,3 +141,4 @@ alias mkdir='mkdir -p'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH=$HOME/.local/bin:$PATH
