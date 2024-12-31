@@ -129,6 +129,13 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
+# Git
+alias ga='git add .'
+alias gs='git status'
+alias gl='git log'
+alias gp='git push'
+alias gpr='git pull --rebase'
+
 # Always mkdir a path (this doesn't inhibit functionality to make a single dir)
 alias mkdir='mkdir -p'
 
