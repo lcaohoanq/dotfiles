@@ -1,0 +1,1 @@
+- Download via: https://github.com/fastfetch-cli/fastfetch/releases
