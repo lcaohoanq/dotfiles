@@ -30,3 +30,13 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#B0EBB4,bg=#000000,bold"
 bindkey "^[[Z" magic-space            # shift-tab to bypass completion
 bindkey "^I^I" autosuggest-accept     # tab + tab for accept the suggestion
 ```
+
+# xclip
+
+- https://linuxconfig.org/how-to-use-xclip-on-linux
+
+```bash
+# xclip
+alias xc='xclip'
+alias xcsc='xclip -selection clipboard'
+```bash
