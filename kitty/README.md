@@ -1,0 +1,1 @@
+- kitty-themes folder from: https://github.com/dexpota/kitty-themes
