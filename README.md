@@ -1,3 +1,21 @@
+# stuffs
+- zoxide, exa, fzf, duf, htop, btop, fastfetch, cmatrix
+```zsh
+sudo apt-get install zoxide exa fzf duf htop btop fastfetch cmatrix
+```
+- For zoxide
+```zsh
+eval "$(zoxide init zsh)"
+```
+
+# oh-my-zsh
+
+- https://ohmyz.sh/#install
+
+```zsh
+sudo apt-get install zsh curl  && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
 # zsh auto suggesstion
 
 ```bash
