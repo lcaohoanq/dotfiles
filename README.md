@@ -57,4 +57,25 @@ bindkey "^I^I" autosuggest-accept     # tab + tab for accept the suggestion
 # xclip
 alias xc='xclip'
 alias xcsc='xclip -selection clipboard'
-```bash
+```
+
+# warp client
+
+- https://developers.cloudflare.com/warp-client/get-started/linux/
+
+```zsh
+# Debian 13 Trixe
+# 1) Thêm repository Cloudflare chuẩn cho Debian
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo tee /etc/apt/keyrings/cloudflare-warp.asc >/dev/null
+
+# Thêm repo:
+echo "deb [signed-by=/etc/apt/keyrings/cloudflare-warp.asc] https://pkg.cloudflareclient.com trixie main" | \
+sudo tee /etc/apt/sources.list.d/cloudflare-warp.list
+
+# 2) Update lại danh sách package
+sudo apt update
+
+# 3) Cài Warp
+sudo apt install cloudflare-warp
+```
