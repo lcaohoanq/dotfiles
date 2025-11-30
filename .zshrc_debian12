@@ -131,7 +131,6 @@ alias po='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also t
 alias vc='code' # gui code editor
 alias showdisk='cd /media/lcaohoanq/ ; ls -al'
 alias yt='ytfzf'
-alias 'nvim=/usr/bin/nvim'
 alias cl='clear'
 alias back='cd ..'
 alias rzsh='source ~/.zshrc'
@@ -196,6 +195,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 [[ -f /home/lcaohoanq/.dart-cli-completion/zsh-config.zsh ]] && . /home/lcaohoanq/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+# Installation follow this: https://github.com/lcaohoanq/linux/tree/master/10-Nvim
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # pnpm
