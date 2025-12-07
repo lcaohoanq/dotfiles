@@ -149,9 +149,14 @@ alias nikefe='cd /media/lcaohoanq/DATA/PIED/NikeCloneTraining-FE-Project'
 alias nikebe='cd /media/lcaohoanq/DATA/PIED/NikeCloneTraining-BE-Project'
 alias configzsh='nvim ~/.zshrc'
 alias confighypr='nvim ~/.config/'
-#fzf
+
+# bat: https://github.com/sharkdp/bat?tab=readme-ov-file#installation
+alias bat="batcat"
+
+# fzf
 alias f='fzf --preview="bat --color=always {}"'
 alias fn='/opt/nvim-linux-x86_64/bin $(fzf --preview="bat --color=always {}")'
+
 
 # auto suggest
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#B0EBB4,bg=#000000,bold"
