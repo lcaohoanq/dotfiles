@@ -89,7 +89,7 @@ plugins=(
   # Các plugin dưới đây cần git clone về folder custom/plugins mới chạy được:
   # zsh-history-substring-search 
   fzf-tab #https://github.com/Aloxaf/fzf-tab?tab=readme-ov-file#oh-my-zsh
-  zoxide
+  zoxide #https://github.com/ajeetdsouza/zoxide
 )
 
 source $ZSH/oh-my-zsh.sh
