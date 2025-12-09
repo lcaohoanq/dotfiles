@@ -58,6 +58,39 @@ bindkey "^I^I" autosuggest-accept     # tab + tab for accept the suggestion
 alias xc='xclip'
 alias xcsc='xclip -selection clipboard'
 ```
+# nmtui 
+
+- Connect wifi
+
+```zsh
+❯ nmcli connection show
+NAME                UUID                                  TYPE      DEVICE          
+HUY_HOANG_Lau2_3    5b26e077-a2ff-4498-b1e5-f0eb4f8bcfc6  wifi      wlp1s0          
+CloudflareWARP      79d5bd09-304a-4a99-b7c7-23a044def9f2  tun       CloudflareWARP  
+br-7a202b6c40ee     8ee1e7b4-5d1f-45df-be68-8f7840c96e26  bridge    br-7a202b6c40ee 
+lo                  9bb33b11-29f2-4441-b259-30f7d1cdd7c5  loopback  lo              
+docker0             0ef73a90-6b33-47b3-8627-f3f70e6e632c  bridge    docker0         
+Wired connection 1  7cffa651-f507-4ddd-ab4d-b1a3b7fa3f5d  ethernet  --  
+```
+
+- Establish new connection
+
+```zsh
+❯ sudo nmcli dev wifi connect "HUY_HOANG_Lau2_3" password "<password>" name "<hihi>" --ask
+
+# Verify, password above need to match with nmconnection:psk=<password>
+sudo grep -R "psk" /etc/NetworkManager/system-connections
+
+#/etc/NetworkManager/system-connections/HUY_HOANG_Lau2_3.nmconnection:key-mgmt=wpa-psk
+#/etc/NetworkManager/system-connections/HUY_HOANG_Lau2_3.nmconnection:psk=<password>
+```
+
+- Delete a connection
+
+```zsh
+nmcli connection delete HUY_HOANG_Lau2_3
+```
+
 
 # warp client
 
