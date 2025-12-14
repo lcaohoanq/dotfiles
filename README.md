@@ -1,7 +1,7 @@
 # stuffs
 - zoxide, exa, fzf, duf, htop, btop, fastfetch, cmatrix
 ```zsh
-sudo apt-get install zoxide exa fzf duf htop btop fastfetch cmatrix
+sudo apt-get install zoxide eza fzf duf htop btop fastfetch cmatrix
 ```
 - For zoxide
 ```zsh
